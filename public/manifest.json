@@ -21,6 +21,6 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "rgb(85, 228, 233)",
+  "background_color": "#FFEBF1",
   "version" : "1.0.0"
 }
