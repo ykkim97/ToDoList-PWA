@@ -1,0 +1,14 @@
+.empty-todos-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img {
+    width: 50%;
+}
+
+.info {
+    font-weight: 500;
+    letter-spacing: -2px;
+}

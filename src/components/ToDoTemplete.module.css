@@ -1,0 +1,35 @@
+.templete {
+    min-height: 900px;
+    /* background: rgb(64, 205, 230); */
+    background: linear-gradient(to right bottom,rgb(85, 228, 233), rgb(26, 192, 243));
+    padding-top: 25px;
+    margin: 0 auto;
+    max-width: 520px;
+}
+
+.templete nav {
+    height: 200px;
+}
+
+.title {
+    text-align: center;
+    margin: auto;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: -3px;
+    margin-bottom: 20px;
+}
+
+.info {
+    text-align: center;
+    margin: auto;
+    font-size: 20px;
+    letter-spacing: -2px;
+    margin-bottom: 50px;
+}
+
+.children {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
