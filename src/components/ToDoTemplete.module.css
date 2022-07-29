@@ -1,6 +1,7 @@
 .templete {
     min-height: 900px;
-    background: rgb(255, 235, 241);
+    /* background: rgba(255, 235, 241, 1.0); */
+    background: #FFEBF1;
     /* background: linear-gradient(to right bottom,rgb(240, 236, 240), rgb(247, 179, 218)); */
     padding-top: 25px;
     margin: 0 auto;
