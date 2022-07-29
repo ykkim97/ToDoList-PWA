@@ -21,8 +21,8 @@ ToDoList 제작 (오늘뭐하지?)
 ## 구현 기능
 
 ### 할 일 추가하기
-<img src="https://user-images.githubusercontent.com/17917009/181779729-9cdee2d4-23d3-43b1-ba5a-d31bb1ca8251.png" />
-<img src="https://user-images.githubusercontent.com/17917009/181782145-8dcb0398-1164-4110-9c77-d18e011f51d4.png" />
+<img src="https://user-images.githubusercontent.com/17917009/181782410-a01eec63-d2a3-4541-9407-63c78827f0b6.png" />
+<img src="https://user-images.githubusercontent.com/17917009/181782309-34044ea0-a157-438b-bf49-2fcc086d35cc.png" />
 <img src="https://user-images.githubusercontent.com/17917009/181780366-b832b961-f8ba-46a7-9bf1-ee009a25685b.png" />
 
 - 메인 화면에 + 버튼을 눌러 일정을 추가할 수 있습니다.
