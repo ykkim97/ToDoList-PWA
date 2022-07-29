@@ -36,9 +36,9 @@ const ToDoInput = ({
             <form className={styles['inputModal']} onSubmit={selectedToDo ? () => {onUpdate(selectedToDo.id, value)} :  onSubmit}>
                 {selectedToDo ? 
                     (
-                        <h2 className={styles['title']}>할 일 수정</h2>
+                        <h2 className={styles['title']}>수정하기</h2>
                     ) : (
-                        <h2 className={styles['title']}>새 할 일 추가</h2>
+                        <h2 className={styles['title']}>추가하기</h2>
                     )    
                 }
                 <input 

@@ -1,11 +1,16 @@
 .ToDoItem {
     margin: auto;
     display: flex;
-    background-color: rgb(205, 244, 247);
-    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    padding: 15px;
     border-radius: 5px;
-    box-shadow: 1px 3px 5px 1px #0c7291;
-    margin : 20px;
+    box-shadow: 1px 3px 5px 1px #e68ea8;
+    margin : 25px;
+    transition: all 0.1s linear;
+}
+
+.ToDoItem:hover {
+    transform: scale(1.01);
 }
 
 .content,
@@ -13,10 +18,6 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-}
-
-.content {
-    
 }
 
 .checked {
@@ -27,7 +28,7 @@
 .checked svg {
     font-size: 25px;
     vertical-align: middle;
-    color: rgb(28, 114, 153);
+    color: #e68ea8;
 }
 
 .content .text,
