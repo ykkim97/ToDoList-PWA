@@ -8,7 +8,10 @@ const ToDoItem = ({ todo, onCheckToggle, onInputToggle, onChangeSelectedToDo }) 
         <div className={styles['ToDoItem']}>
             <div className={isChecked ? styles['checked'] : styles[`content`]}>
                 <div>
-                    {isChecked ? <MdCheckBox onClick={() => {onCheckToggle(id)}}/> : <MdCheckBoxOutlineBlank onClick={() => {onCheckToggle(id)}}/>}
+                    {isChecked ? 
+                        <MdCheckBox onClick={() => {onCheckToggle(id)}}/> : 
+                        <MdCheckBoxOutlineBlank onClick={() => {onCheckToggle(id)}}/>
+                    }
                 </div>
                 <div className={styles['text']} onClick={() => {
                     onChangeSelectedToDo(todo);
