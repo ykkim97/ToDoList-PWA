@@ -84,12 +84,17 @@ function App() {
     <ToDoTemplete todosLength={todos.length}>
         {todos.length === 0 
           ? (<EmptyToDos />) : 
-          <ToDoList 
-            todos={todos} 
-            onCheckToggle={onCheckToggle}
-            onInputToggle={onInputToggle}
-            onChangeSelectedToDo={onChangeSelectedToDo}
-          />
+          (
+            <div>
+              {/* <button>전체 선택</button> */}
+              <ToDoList 
+                todos={todos} 
+                onCheckToggle={onCheckToggle}
+                onInputToggle={onInputToggle}
+                onChangeSelectedToDo={onChangeSelectedToDo}
+              />
+            </div>
+          )
         }
         
 
