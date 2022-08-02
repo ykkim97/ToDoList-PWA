@@ -6,6 +6,7 @@ import EmptyToDos from './components/EmptyToDos';
 import ToDoInput from './components/ToDoInput';
 import ToDoList from './components/ToDoList';
 import ToDoTemplete from './components/ToDoTemplete';
+import { FaTrash } from "react-icons/fa";
 
 let nextId = 1;
 
@@ -23,11 +24,7 @@ function App() {
       //   text : "할일 2",
       //   isChecked : false
       // },
-      // {
-      //   id : 3,
-      //   text : "할일 3",
-      //   isChecked : true
-      // },
+      // ....
     ]);
   
     
@@ -80,13 +77,32 @@ function App() {
       onInputToggle();
     }
 
+    // 전체선택
+    const onAllCheck = () => {
+      setTodos(todos.map(todo => ({...todo, isChecked : true})))
+    }
+
+    // 전체선택 해제
+    const onAllCheckClear = () => {
+      setTodos(todos.map(todo => ({...todo, isChecked : false})))
+    }
+
+    // 선택 항목 삭제
+    const onDeleteCheckItem = () => {
+      setTodos(todos => todos.filter(todo => todo.isChecked === false));
+    }
+
   return (
     <ToDoTemplete todosLength={todos.length}>
         {todos.length === 0 
           ? (<EmptyToDos />) : 
           (
             <div>
-              {/* <button>전체 선택</button> */}
+              <div className='check-menu'>
+                <button onClick={onAllCheck} className="all-check">전체 선택</button>
+                <button onClick={onAllCheckClear} className="all-checkclear">선택 해제</button>
+                <button onClick={onDeleteCheckItem} className="all-delete"><FaTrash /></button>
+              </div>
               <ToDoList 
                 todos={todos} 
                 onCheckToggle={onCheckToggle}
@@ -96,7 +112,6 @@ function App() {
             </div>
           )
         }
-        
 
         {/* 할일 추가 버튼 */}
         <div className='add-todo'>

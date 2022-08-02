@@ -1,3 +1,49 @@
+.check-menu {
+  /* background-color: red; */
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5px;
+  margin-right: 20px;
+}
+
+.all-check {
+  width: 75px;
+  padding: 5px;
+  margin-left: 10px;
+  border-radius: 3px;
+  border: none;
+  box-shadow: 1px 2px 3px 1px #e68ea8;
+  background: white;
+  cursor: pointer;
+}
+
+.all-checkclear {
+  width: 75px;
+  padding: 5px;
+  margin-left: 10px;
+  border-radius: 3px;
+  border: none;
+  box-shadow: 1px 2px 3px 1px #e68ea8;
+  background: white;
+  cursor: pointer;
+}
+
+.all-delete {
+  width: 75px;
+  padding: 5px;
+  margin-left: 10px;
+  border-radius: 3px;
+  border: none;
+  box-shadow: 1px 2px 3px 1px #e68ea8;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(209, 84, 84);
+  font-size: 15px;
+}
+
 .add-todo {
   font-size: 70px;
   position: fixed;
@@ -7,3 +53,4 @@
   color: rgb(241, 104, 168);
   cursor: pointer;
 }
+
