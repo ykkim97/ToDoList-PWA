@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { MdAddCircle } from "react-icons/md";
 import styles from "./ToDoInput.module.css";
-import { FaPen, FaTrash } from "react-icons/fa";
+import { FaPen, FaTrash, FaCheckCircle } from "react-icons/fa";
 
 const ToDoInput = ({ 
     onInputToggle, 
@@ -36,9 +36,9 @@ const ToDoInput = ({
             <form className={styles['inputModal']} onSubmit={selectedToDo ? () => {onUpdate(selectedToDo.id, value)} :  onSubmit}>
                 {selectedToDo ? 
                     (
-                        <h2 className={styles['title']}>수정하기</h2>
+                        <h2 className={styles['title']}>할일 수정</h2>
                     ) : (
-                        <h2 className={styles['title']}>추가하기</h2>
+                        <h2 className={styles['title']}>새 할일</h2>
                     )    
                 }
                 <input 
@@ -54,7 +54,8 @@ const ToDoInput = ({
                     </div>
                 ) : (
                     <button type="submit">
-                        <MdAddCircle />
+                        {/* <MdAddCircle /> */}
+                        <FaCheckCircle />
                     </button>
                 )}
             </form>
