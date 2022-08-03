@@ -89,9 +89,11 @@
 }
 
 .update svg:nth-child(1) {
-    color: rgb(13, 165, 71);
+    /* color: rgb(13, 165, 71); */
+    color: #4cd4ae;
 }
 
 .update svg:nth-child(2) {
-    color : rgb(209, 84, 84)
+    /* color : rgb(209, 84, 84); */
+    color: #4cd4ae;
 }

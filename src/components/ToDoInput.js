@@ -49,7 +49,7 @@ const ToDoInput = ({
                 ></input>
                 {selectedToDo ? 
                     (<div className={styles['update']}>
-                        <FaPen type="button" onClick={() => onUpdate(selectedToDo.id, value)}/>
+                        <FaCheckCircle type="button" onClick={() => onUpdate(selectedToDo.id, value)}/>
                         <FaTrash type="button" onClick={() => onDelete(selectedToDo.id)}/>
                     </div>
                 ) : (
