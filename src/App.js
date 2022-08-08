@@ -9,12 +9,6 @@ import ToDoTemplete from './components/ToDoTemplete';
 import { FaTrash } from "react-icons/fa";
 
 let nextId = 1;
-let getStorage = localStorage.getItem('todos');
-getStorage = JSON.parse(getStorage);
-if (getStorage.length === 0) nextId = 1;
-else {
-  nextId = getStorage[getStorage.length - 1].id + 1;
-}
 
 function App() {
   // 할일이 들어있는 todos객체 배열
@@ -34,6 +28,13 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos))
+
+    let getStorage = localStorage.getItem('todos');
+    getStorage = JSON.parse(getStorage);
+    if (getStorage != null && getStorage.length === 0) nextId = 1;
+    else {
+      nextId = getStorage[getStorage.length - 1].id + 1;
+    }
   },[todos]);
 
   // useEffect(() => {
