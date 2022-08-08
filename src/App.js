@@ -9,88 +9,109 @@ import ToDoTemplete from './components/ToDoTemplete';
 import { FaTrash } from "react-icons/fa";
 
 let nextId = 1;
+let getStorage = localStorage.getItem('todos');
+getStorage = JSON.parse(getStorage);
+if (getStorage.length === 0) nextId = 1;
+else {
+  nextId = getStorage[getStorage.length - 1].id + 1;
+}
 
 function App() {
-  
-    // 할일이 들어있는 todos객체 배열
-    const [todos, setTodos] = useState([
-      // {
-      //   id : 1,
-      //   text : "할일 1",
-      //   isChecked : true
-      // },
-      // {
-      //   id : 2,
-      //   text : "할일 2",
-      //   isChecked : false
-      // },
-      // ....
-    ]);
-  
-    
-    const [inputToggle, setInputToggle] = useState(false);
-    const [selectedToDo, setSelectedToDo] = useState(null);
-  
-
-    // 할일 작성 모달창 토글
-    const onInputToggle = () => {
-      if (selectedToDo) {
-        setSelectedToDo(null);
-      }
-      setInputToggle(prev => !prev);
+  // 할일이 들어있는 todos객체 배열
+  const [todos, setTodos] = useState(() => {
+    const storage = localStorage.getItem('todos');
+    if (storage) {
+      return JSON.parse(storage);
+    } else {
+      return [];
     }
+  });
   
-    // 할 일 새로 추가
-    const onAddToDo = (text) => {
-      if (text == null) {
-        return alert('할 일을 입력해주세요!')
+  const [inputToggle, setInputToggle] = useState(false);
+  const [selectedToDo, setSelectedToDo] = useState(null);
+
+  let todosArray;
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos))
+  },[todos]);
+
+  // useEffect(() => {
+  //   let storage = localStorage.getItem('todos');
+  //   if (storage == null) storage = [];
+  //   else storage = JSON.parse(storage);
+  //   setTodos([...storage]);
+  // }, [])
+
+  // 할일 작성 모달창 토글
+  const onInputToggle = () => {
+    if (selectedToDo) {
+      setSelectedToDo(null);
+    }
+    setInputToggle(prev => !prev);
+  }
+
+  // 할 일 새로 추가
+  const onAddToDo = (text) => {
+    if (text == null) {
+      return alert('할 일을 입력해주세요!')
+    } else {
+      const todo = {
+        id : nextId,
+        text,
+        isChecked : false
+      };
+      setTodos(todos => todos.concat(todo));
+      nextId++;
+
+      todosArray = localStorage.getItem('todos');
+      if (todosArray === null) {
+        todosArray = [];
       } else {
-        const todo = {
-          id : nextId,
-          text,
-          isChecked : false
-        };
-        setTodos(todos => todos.concat(todo));
-        nextId++;
+        todosArray = JSON.parse(todosArray);
       }
-    }
-  
-    // 체크 박스 토글
-    const onCheckToggle = (id) => {
-      setTodos(todos => todos.map(todo => (todo.id === id ? {...todo, isChecked : !todo.isChecked} : todo)));
-    }
-  
-    // 선택된 할 일을 변경
-    const onChangeSelectedToDo = (todo) => {
-      setSelectedToDo(todo);
-    }
-  
-    // 삭제하기
-    const onDelete = (id) => {
-      onInputToggle();
-      setTodos(todos => todos.filter(todo => todo.id !== id));
-    }
-    
-    // 수정하기
-    const onUpdate = (id, text) => {
-      setTodos(todos => todos.map(todo => todo.id === id ? {...todo, text} : todo));
-      onInputToggle();
-    }
 
-    // 전체선택
-    const onAllCheck = () => {
-      setTodos(todos.map(todo => ({...todo, isChecked : true})))
+      todosArray = [...todosArray, todo];
+      localStorage.setItem('todos', JSON.stringify(todosArray));
     }
+  }
 
-    // 전체선택 해제
-    const onAllCheckClear = () => {
-      setTodos(todos.map(todo => ({...todo, isChecked : false})))
-    }
+  // 체크 박스 토글
+  const onCheckToggle = (id) => {
+    setTodos(todos => todos.map(todo => (todo.id === id ? {...todo, isChecked : !todo.isChecked} : todo)));
+  }
 
-    // 선택 항목 삭제
-    const onDeleteCheckItem = () => {
-      setTodos(todos => todos.filter(todo => todo.isChecked === false));
-    }
+  // 선택된 할 일을 변경
+  const onChangeSelectedToDo = (todo) => {
+    setSelectedToDo(todo);
+  }
+
+  // 삭제하기
+  const onDelete = (id) => {
+    onInputToggle();
+    setTodos(todos => todos.filter(todo => todo.id !== id));
+  }
+  
+  // 수정하기
+  const onUpdate = (id, text) => {
+    setTodos(todos => todos.map(todo => todo.id === id ? {...todo, text} : todo));
+    onInputToggle();
+  }
+
+  // 전체선택
+  const onAllCheck = () => {
+    setTodos(todos.map(todo => ({...todo, isChecked : true})))
+  }
+
+  // 전체선택 해제
+  const onAllCheckClear = () => {
+    setTodos(todos.map(todo => ({...todo, isChecked : false})))
+  }
+
+  // 선택 항목 삭제
+  const onDeleteCheckItem = () => {
+    setTodos(todos => todos.filter(todo => todo.isChecked === false));
+  }
 
   return (
     <ToDoTemplete todosLength={todos.length}>
