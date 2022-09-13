@@ -21,13 +21,12 @@ ToDoList 제작 (오늘뭐하지?)
 ## 구현 기능
 
 ### 할 일 추가하기
-<img src="https://user-images.githubusercontent.com/17917009/181782410-a01eec63-d2a3-4541-9407-63c78827f0b6.png" />
-<img src="https://user-images.githubusercontent.com/17917009/181782309-34044ea0-a157-438b-bf49-2fcc086d35cc.png" />
-<img src="https://user-images.githubusercontent.com/17917009/181780366-b832b961-f8ba-46a7-9bf1-ee009a25685b.png" />
+<img src="https://user-images.githubusercontent.com/17917009/183664954-bd8c9473-e905-4737-a65d-b8be554f4872.png" />
 
 - 메인 화면에 + 버튼을 눌러 일정을 추가할 수 있습니다.
 - 일정을 등록하면 메인화면에 일정이 추가됩니다. 
 - 등록한 일정이 완료됬는지 체크할 수 있는 체크박스가 있습니다.
+- 브라우저를 종료하더라도 기록이 남아있습니다.
 
 ### 할 일 수정 및 삭제하기
 <img src="https://user-images.githubusercontent.com/17917009/181781147-6d55d409-0b7c-47ca-9c21-ba5cf85649ca.png" />
@@ -42,7 +41,8 @@ ToDoList 제작 (오늘뭐하지?)
 
 ## 느낀점
 
-
+그렇게 어렵다고 느끼지 않았지만, 뭔가 반복적으로 어떤 내용을 익히지 않으면 쉽게 까먹는다는 것을 느꼈다. 그냥 알고있다고 생각했지만 시간이 지나고 코딩을 다시하려했을 때, 까먹고 다시 검색하는 경우가 많았다. 물론 개발자가 모든 내용을 기억할 수는 없겠지만, 기본적인 부분은 확실히 다시 짚고 공부해야겠다는 생각이 들었다.
 
 ## 추가 사항
--
+
+https://today-todolist.netlify.app/
