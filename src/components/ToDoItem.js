@@ -2,7 +2,12 @@ import React from "react";
 import styles from "./ToDoItem.module.css";
 import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
 
-const ToDoItem = ({ todo, onCheckToggle, onInputToggle, onChangeSelectedToDo }) => {
+const ToDoItem = ({ 
+    todo, 
+    onCheckToggle, 
+    onInputToggle, 
+    onChangeSelectedToDo 
+}) => {
     const { id, text, isChecked } = todo;
     return (
         <div className={styles['ToDoItem']}>

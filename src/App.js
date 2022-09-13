@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { MdAddCircle } from 'react-icons/md';
-import './App.css';
 import EmptyToDos from './components/EmptyToDos';
 import ToDoInput from './components/ToDoInput';
 import ToDoList from './components/ToDoList';
 import ToDoTemplete from './components/ToDoTemplete';
 import { FaTrash } from "react-icons/fa";
+import './App.css';
 
 let nextId = 1;
 
 function App() {
-  // 할일이 들어있는 todos객체 배열
+  // 할 일이 들어있는 todos객체 Array
   const [todos, setTodos] = useState(() => {
     const storage = localStorage.getItem('todos');
     if (storage) {
@@ -36,13 +36,6 @@ function App() {
       nextId = getStorage[getStorage.length - 1].id + 1;
     }
   },[todos]);
-
-  // useEffect(() => {
-  //   let storage = localStorage.getItem('todos');
-  //   if (storage == null) storage = [];
-  //   else storage = JSON.parse(storage);
-  //   setTodos([...storage]);
-  // }, [])
 
   // 할일 작성 모달창 토글
   const onInputToggle = () => {
@@ -116,6 +109,7 @@ function App() {
 
   return (
     <ToDoTemplete todosLength={todos.length}>
+        {/* 할일이 등록되지 않으면 <EmptyToDos />를 등록이 되어있으면 할 일 목록을 보여주는 부분 */}
         {todos.length === 0 
           ? (<EmptyToDos />) : 
           (
@@ -125,12 +119,14 @@ function App() {
                 <button onClick={onAllCheckClear} className="all-checkclear">선택 해제</button>
                 <button onClick={onDeleteCheckItem} className="all-delete"><FaTrash /></button>
               </div>
+
               <ToDoList 
                 todos={todos} 
                 onCheckToggle={onCheckToggle}
                 onInputToggle={onInputToggle}
                 onChangeSelectedToDo={onChangeSelectedToDo}
               />
+
             </div>
           )
         }

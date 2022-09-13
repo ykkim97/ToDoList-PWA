@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./EmptyToDos.module.css";
 
+// 할 일 목록이 비어있을 때 사용되는 컴포넌트
 const EmptyToDos = () => {
     return (
         <div className={styles['empty-todos-div']}>
